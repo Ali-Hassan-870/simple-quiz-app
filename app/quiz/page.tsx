@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { quizQuestions } from "../data/quiz-data";
+import { quizData } from "../data/quiz-data";
 import Button from "../components/common/button";
 import Link from "next/link";
 import { QuizCompleted } from "../components/features/quiz-completed";
@@ -11,6 +11,7 @@ export default function QuizRoute() {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [score, setScore] = useState(0);
 
+  const {quizName, quizQuestions} = quizData;
   const currentQuestion = quizQuestions[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === quizQuestions.length - 1;
 
@@ -41,7 +42,7 @@ export default function QuizRoute() {
               href="/"
               className="font-medium text-gray-700 hover:underline cursor-pointer"
             >
-              <span>Guess the Country by hint</span>
+              <span>{quizName}</span>
             </Link>
             <div className="flex items-center gap-2 sm:gap-4 text-black">
               <span className="pl-2 ">
