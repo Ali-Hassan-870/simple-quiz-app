@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Button from "./components/button";
+import Button from "./components/common/button";
 import Link from "next/link";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <div className="relative w-[60vw] h-[85vh] border rounded-md flex justify-center items-center">
         {/* Background Image */}
         <Image
-          src="/background.jpg"
+          src="/countries-in-the-world.webp"
           alt="Background"
           fill
           className="object-cover rounded-md"
@@ -17,7 +17,7 @@ export default function Home() {
 
         {/* Centered Div using parent flex */}
         <div className="w-2/5 h-2/5 bg-white flex flex-col justify-between items-center z-10 rounded-md p-5">
-          <h1 className="font-[Georgia,serif] text-black text-3xl">Spot the Misspelled Word Quiz</h1>
+          <h1 className="font-[Georgia,serif] text-black text-3xl">Guess the Country by hint</h1>
           <Link href={"/quiz"} className="w-full h-2/6">
             <Button name="Start" />
           </Link>
